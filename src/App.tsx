@@ -1,26 +1,34 @@
 import { Header } from './components/Header';
-// import { Hero } from './components/Hero';
-import {Demo} from './components/Demo'
+import { Hero } from './components/Hero';
+import { Demo } from './components/Demo'
 import { Collection } from './components/Collection';
 import { Features } from './components/Features';
 import { Testimonials } from './components/Testimonials';
 import { Newsletter } from './components/Newsletter';
 import { Footer } from './components/Footer';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 export default function App() {
   const [isDarkMode, setIsDarkMode] = useState(false);
 
+  useEffect(() => {
+    if (isDarkMode) {
+      document.documentElement.classList.add('dark');
+    } else {
+      document.documentElement.classList.remove('dark');
+    }
+  }, [isDarkMode]);
+
   return (
-    <div className={`min-h-screen transition-colors duration-300 ${isDarkMode ? 'bg-gray-900' : 'bg-[#FAF9F7]'}`}>
+    <div className="min-h-screen transition-colors duration-300 bg-background text-foreground">
       <Header isDarkMode={isDarkMode} setIsDarkMode={setIsDarkMode} />
-      {/* <Hero isDarkMode={isDarkMode} /> */}
-      <Demo/>
-      <Collection isDarkMode={isDarkMode} />
-      <Features isDarkMode={isDarkMode} />
-      <Testimonials isDarkMode={isDarkMode} />
-      <Newsletter isDarkMode={isDarkMode} />
-      <Footer isDarkMode={isDarkMode} />
+      <Hero isDarkMode={isDarkMode} />
+      {/* <Demo/> */}
+      <Collection />
+      <Features />
+      <Testimonials />
+      <Newsletter />
+      <Footer />
     </div>
   );
 }
