@@ -6,12 +6,12 @@ interface HeroProps {
 
 export function Hero({ isDarkMode }: HeroProps) {
   return (
-    <section className="relative min-h-screen lg:h-screen w-full overflow-x-hidden lg:overflow-hidden hero">
+    <section className="relative h-screen overflow-hidden hero ">
       {/* Premium background */}
       <div className="absolute inset-0">
         <div className={`absolute inset-0 transition-colors duration-700 ${isDarkMode
-          ? 'bg-[#0A0A0A]'
-          : 'bg-[#FAFAF8]'
+            ? 'bg-[#0A0A0A]'
+            : 'bg-[#FAFAF8]'
           }`}></div>
 
         {/* Animated gradient orbs */}
@@ -19,7 +19,7 @@ export function Hero({ isDarkMode }: HeroProps) {
       </div>
 
       {/* Content wrapper */}
-      <div className="relative h-full max-w-[1440px] mx-auto px-6 md:px-12 lg:px-20">
+      <div className="relative h-full max-w-[1800px] mx-auto px-6 md:px-12 lg:px-20">
 
         {/* Centered product-first layout */}
         <div className="relative h-full flex flex-col justify-center items-center">
@@ -27,8 +27,8 @@ export function Hero({ isDarkMode }: HeroProps) {
           {/* Top content bar */}
           <div className="absolute top-12 left-0 right-0 z-30 flex items-center justify-between px-6 md:px-12">
             <div className={`inline-flex items-center gap-3 px-5 py-2 rounded-full border backdrop-blur-xl transition-all duration-300 ${isDarkMode
-              ? 'bg-[#1A1612]/60 border-[#C9A882]/20 text-[#E5D5C3]'
-              : 'bg-black/5 border-black/10 text-gray-600'
+                ? 'bg-[#1A1612]/60 border-[#C9A882]/20 text-[#E5D5C3]'
+                : 'bg-black/5 border-black/10 text-gray-600'
               }`}>
               <span className="relative flex h-2 w-2">
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#C9A882] opacity-75"></span>
@@ -37,9 +37,9 @@ export function Hero({ isDarkMode }: HeroProps) {
               <span className="text-xs tracking-[0.2em] uppercase">New Launch</span>
             </div>
 
-            <div className={`flex items-baseline gap-2 md:gap-3 px-4 py-2 md:px-6 md:py-3 rounded-full border backdrop-blur-xl ${isDarkMode
-              ? 'bg-[#1A1612]/60 border-[#C9A882]/20'
-              : 'bg-white/60 border-gray-200/60'
+            <div className={`hidden md:flex items-baseline gap-3 px-6 py-3 rounded-full border backdrop-blur-xl ${isDarkMode
+                ? 'bg-[#1A1612]/60 border-[#C9A882]/20'
+                : 'bg-white/60 border-gray-200/60'
               }`}>
               <span className={`text-xs tracking-[0.2em] uppercase ${isDarkMode ? 'text-[#A89178]' : 'text-gray-600'
                 }`}>From</span>
@@ -49,10 +49,10 @@ export function Hero({ isDarkMode }: HeroProps) {
           </div>
 
           {/* Main content grid - Three column layout */}
-          <div className="relative w-full grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center pt-32 pb-20 lg:py-0">
+          <div className="relative w-full grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center py-20 lg:py-0">
 
             {/* Left sidebar - Features */}
-            <div className="lg:col-span-3 order-3 lg:order-1 space-y-8">
+            <div className="lg:col-span-3 order-2 lg:order-1 space-y-8">
               <div className="space-y-6">
                 <div className={`h-px w-16 ${isDarkMode ? 'bg-[#C9A882]/30' : 'bg-gray-300'
                   }`}></div>
@@ -71,8 +71,8 @@ export function Hero({ isDarkMode }: HeroProps) {
                     className="group flex items-start gap-4 cursor-pointer"
                   >
                     <div className={`mt-1 p-3 rounded-xl border transition-all duration-300 group-hover:scale-110 group-hover:border-[#C9A882]/50 ${isDarkMode
-                      ? 'bg-[#1A1612]/60 border-[#C9A882]/20'
-                      : 'bg-white/60 border-gray-200/60'
+                        ? 'bg-[#1A1612]/60 border-[#C9A882]/20'
+                        : 'bg-white/60 border-gray-200/60'
                       }`}>
                       <item.icon
                         size={20}
@@ -142,8 +142,8 @@ export function Hero({ isDarkMode }: HeroProps) {
 
                   {/* Floating badge */}
                   <div className={`absolute top-0 right-0 w-24 h-24 rounded-full flex flex-col items-center justify-center backdrop-blur-xl border shadow-2xl transition-all duration-300 group-hover:scale-110 ${isDarkMode
-                    ? 'bg-[#1A1612]/95 border-[#C9A882]/30 text-[#F5EDE3]'
-                    : 'bg-white/90 border-white text-gray-900'
+                      ? 'bg-[#1A1612]/95 border-[#C9A882]/30 text-[#F5EDE3]'
+                      : 'bg-white/90 border-white text-gray-900'
                     }`}>
                     <div className="text-[9px] tracking-widest uppercase opacity-60">Best</div>
                     <div className="text-lg mt-0.5">⭐</div>
@@ -161,7 +161,7 @@ export function Hero({ isDarkMode }: HeroProps) {
             </div>
 
             {/* Right sidebar - CTA & Info */}
-            <div className="lg:col-span-3 order-2 lg:order-3 space-y-8">
+            <div className="lg:col-span-3 order-3 space-y-8">
 
               {/* CTA buttons stacked */}
               <div className="space-y-3">
@@ -177,8 +177,8 @@ export function Hero({ isDarkMode }: HeroProps) {
 
                 <button
                   className={`w-full group px-8 py-5 border-2 transition-all duration-300 hover:scale-[1.02] active:scale-[0.98] focus:outline-none focus:ring-4 ${isDarkMode
-                    ? 'border-[#C9A882]/30 text-[#F5EDE3] hover:bg-[#C9A882]/10 hover:border-[#C9A882] focus:ring-[#C9A882]/20'
-                    : 'border-gray-300 text-gray-900 hover:bg-gray-900 hover:text-white hover:border-gray-900 focus:ring-gray-300'
+                      ? 'border-[#C9A882]/30 text-[#F5EDE3] hover:bg-[#C9A882]/10 hover:border-[#C9A882] focus:ring-[#C9A882]/20'
+                      : 'border-gray-300 text-gray-900 hover:bg-gray-900 hover:text-white hover:border-gray-900 focus:ring-gray-300'
                     }`}
                 >
                   <span className="text-xs tracking-[0.15em] uppercase flex items-center justify-center gap-2">
@@ -190,8 +190,8 @@ export function Hero({ isDarkMode }: HeroProps) {
               {/* Info cards */}
               <div className="space-y-4">
                 <div className={`p-5 rounded-2xl border backdrop-blur-md transition-all duration-300 ${isDarkMode
-                  ? 'bg-[#1A1612]/60 border-[#C9A882]/20'
-                  : 'bg-white/60 border-gray-200/60'
+                    ? 'bg-[#1A1612]/60 border-[#C9A882]/20'
+                    : 'bg-white/60 border-gray-200/60'
                   }`}>
                   <div className={`text-xs tracking-wider uppercase mb-2 ${isDarkMode ? 'text-[#A89178]' : 'text-gray-600'
                     }`}>Size</div>
@@ -200,8 +200,8 @@ export function Hero({ isDarkMode }: HeroProps) {
                 </div>
 
                 <div className={`p-5 rounded-2xl border backdrop-blur-md transition-all duration-300 ${isDarkMode
-                  ? 'bg-[#1A1612]/60 border-[#C9A882]/20'
-                  : 'bg-white/60 border-gray-200/60'
+                    ? 'bg-[#1A1612]/60 border-[#C9A882]/20'
+                    : 'bg-white/60 border-gray-200/60'
                   }`}>
                   <div className={`text-xs tracking-wider uppercase mb-2 ${isDarkMode ? 'text-[#A89178]' : 'text-gray-600'
                     }`}>Skin Type</div>
@@ -210,8 +210,8 @@ export function Hero({ isDarkMode }: HeroProps) {
                 </div>
 
                 <div className={`p-5 rounded-2xl border backdrop-blur-md transition-all duration-300 ${isDarkMode
-                  ? 'bg-[#1A1612]/60 border-[#C9A882]/20'
-                  : 'bg-white/60 border-gray-200/60'
+                    ? 'bg-[#1A1612]/60 border-[#C9A882]/20'
+                    : 'bg-white/60 border-gray-200/60'
                   }`}>
                   <div className={`text-xs tracking-wider uppercase mb-2 ${isDarkMode ? 'text-[#A89178]' : 'text-gray-600'
                     }`}>Free Shipping</div>
